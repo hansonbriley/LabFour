@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+#include <QTime>
+#include <QTimeZone>
+#include <QDateTime>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +20,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void setTime();
+    void setNYCTime();
+
 private:
     Ui::MainWindow *ui;
+    QTimer *timer;
+    QTimer *timerNYC;
+
 };
 #endif // MAINWINDOW_H
