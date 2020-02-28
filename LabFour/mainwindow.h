@@ -24,10 +24,9 @@ public:
 
 private slots:
     void SetTime();
+    void SetMapImage();
     void SetNYCTime();
     void ProcessImage(QPixmap *);
-
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

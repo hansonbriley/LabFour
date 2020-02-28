@@ -16,8 +16,8 @@ HTTPManager::~HTTPManager()
 
 void HTTPManager::sendImageRequest()
 {
-    QNetworkRequest request;
-    request.setUrl(QUrl("https://en.wikipedia.org/wiki/Washington_Huskies#/media/File:Washington_Huskies_logo.svg"));
+    QUrl url("https://i.imgur.com/59ODBB2.jpg");
+    QNetworkRequest request(url);
     imageDownloadManager->get(request);
     qDebug() << "Image requst sent to " << request.url();
 }

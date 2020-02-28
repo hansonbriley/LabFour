@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(httpManager, SIGNAL(ImageReady(QPixmap *)),
             this, SLOT(ProcessImage(QPixmap *)));
+    SetMapImage();
 
 }
 
@@ -43,6 +44,11 @@ void MainWindow::SetTime()
     ui->hoursTime->display(hour);
     ui->minutesTime->display(minute);
     ui->secondsTime->display(second);
+}
+
+void MainWindow::SetMapImage()
+{
+    httpManager->sendImageRequest();
 }
 
 void MainWindow::SetNYCTime()
@@ -66,9 +72,3 @@ void MainWindow::ProcessImage(QPixmap *image)
 }
 
 
-
-
-void MainWindow::on_pushButton_clicked()
-{
-    httpManager->sendImageRequest();
-}
