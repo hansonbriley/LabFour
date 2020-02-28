@@ -14,9 +14,12 @@ HTTPManager::~HTTPManager()
     delete imageDownloadManager;
 }
 
-void HTTPManager::sendImageRequest()
+void HTTPManager::sendImageRequest(QString zip)
 {
-    QUrl url("https://i.imgur.com/59ODBB2.jpg");
+    QString address = "https://dev.virtualearth.net/REST/V1/Imagery/Map/AerialWithLabels/"
+            + zip +
+            "/7?mapSize=261,331&mapLayer=TrafficFlow&format=png&key=Ah7fx0DSH-F8DmgbppyeKKl3c-dc9IuKrM9eaStS08d3UMPMel42Y6EYXFMTtZo8";
+    QUrl url(address);
     QNetworkRequest request(url);
     imageDownloadManager->get(request);
     qDebug() << "Image requst sent to " << request.url();

@@ -28,6 +28,8 @@ private slots:
     void SetNYCTime();
     void ProcessImage(QPixmap *);
 
+    void on_zipCodeUpdate_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;

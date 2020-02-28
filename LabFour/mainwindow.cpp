@@ -48,7 +48,8 @@ void MainWindow::SetTime()
 
 void MainWindow::SetMapImage()
 {
-    httpManager->sendImageRequest();
+    QString zipCode = ui->zipCodeEdit->text();
+    httpManager->sendImageRequest(zipCode);
 }
 
 void MainWindow::SetNYCTime()
@@ -72,3 +73,10 @@ void MainWindow::ProcessImage(QPixmap *image)
 }
 
 
+
+void MainWindow::on_zipCodeUpdate_clicked()
+{
+    QString zipCode = ui->zipCodeEdit->text();
+    qDebug() << zipCode;
+    httpManager->sendImageRequest(zipCode);
+}

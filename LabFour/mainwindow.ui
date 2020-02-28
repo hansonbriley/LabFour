@@ -246,26 +246,45 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>300</y>
+      <y>290</y>
       <width>261</width>
-      <height>301</height>
+      <height>331</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>261</width>
+      <height>331</height>
+     </size>
+    </property>
     <property name="text">
-     <string>Map</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="zipCodeUpdate">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>100</y>
+      <x>230</x>
+      <y>260</y>
       <width>75</width>
-      <height>23</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Update</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="zipCodeEdit">
+    <property name="geometry">
+     <rect>
+      <x>152</x>
+      <y>260</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>98006</string>
     </property>
    </widget>
   </widget>
