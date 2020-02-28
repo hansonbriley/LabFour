@@ -13,12 +13,12 @@ public:
     explicit HTTPManager(QObject *parent = nullptr);
     ~HTTPManager();
 
-    void SendImageRequest();
+    void sendImageRequest();
 
 signals:
     void ImageReady(QPixmap *image);
 
-private slots:
+public slots:
     void ImageDownloadedHandler(QNetworkReply *reply);
 
 private:

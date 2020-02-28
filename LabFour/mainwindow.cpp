@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
     connect(timer, SIGNAL(timeout()),
             this, SLOT(setTime()));
     SetTime();
@@ -69,5 +70,5 @@ void MainWindow::ProcessImage(QPixmap *image)
 
 void MainWindow::on_pushButton_clicked()
 {
-    httpManager->SendImageRequest();
+    httpManager->sendImageRequest();
 }

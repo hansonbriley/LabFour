@@ -3,7 +3,7 @@
 
 HTTPManager::HTTPManager(QObject *parent) :
     QObject(parent),
-    imageDownloadManager(new QNetworkAccessManager)
+    imageDownloadManager(new QNetworkAccessManager(this))
 {
     connect(imageDownloadManager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(ImageDownloadedHandler(QNetworkReply*)));
@@ -14,10 +14,10 @@ HTTPManager::~HTTPManager()
     delete imageDownloadManager;
 }
 
-void HTTPManager::SendImageRequest()
+void HTTPManager::sendImageRequest()
 {
     QNetworkRequest request;
-    request.setUrl(QUrl("https://thehappypuppysite.com/wp-content/uploads/2015/09/The-Siberian-Husky-HP-long.jpg"));
+    request.setUrl(QUrl("https://en.wikipedia.org/wiki/Washington_Huskies#/media/File:Washington_Huskies_logo.svg"));
     imageDownloadManager->get(request);
     qDebug() << "Image requst sent to " << request.url();
 }
@@ -25,8 +25,9 @@ void HTTPManager::SendImageRequest()
 void HTTPManager::ImageDownloadedHandler(QNetworkReply *reply)
 {
     qDebug() << "Image reply has arrived";
+    qDebug() << QSslSocket::supportsSsl() << QSslSocket::sslLibraryBuildVersionString() << QSslSocket::sslLibraryVersionString();
     if (reply->error()) {
-        qDebug() << "Image failed";
+        qDebug() << reply->errorString();
         return;
     }
 
