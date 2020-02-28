@@ -6,19 +6,24 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow),
     timer(new QTimer),
-    timerNYC(new QTimer)
-
+    timerNYC(new QTimer),
+    httpManager(new HTTPManager)
 {
     ui->setupUi(this);
+
     connect(timer, SIGNAL(timeout()),
             this, SLOT(setTime()));
-    setTime();
+    SetTime();
     timer->start(1000);
 
     connect(timerNYC, SIGNAL(timeout()),
             this, SLOT(setNYCTime()));
-    setNYCTime();
+    SetNYCTime();
     timerNYC->start(1000);
+
+    connect(httpManager, SIGNAL(ImageReady(QPixmap *)),
+            this, SLOT(ProcessImage(QPixmap *)));
+
 }
 
 MainWindow::~MainWindow()
@@ -26,7 +31,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::setTime()
+void MainWindow::SetTime()
 {
     QTime time = QTime::currentTime();
 
@@ -39,7 +44,7 @@ void MainWindow::setTime()
     ui->secondsTime->display(second);
 }
 
-void MainWindow::setNYCTime()
+void MainWindow::SetNYCTime()
 {
     QDateTime time = QDateTime::currentDateTime();
     QDateTime timeNYC = time.toTimeZone(QTimeZone ("America/New_York"));
@@ -54,3 +59,15 @@ void MainWindow::setNYCTime()
     ui->secondNYC->display(second);
 }
 
+void MainWindow::ProcessImage(QPixmap *image)
+{
+    ui->mapLabel->setPixmap(*image);
+}
+
+
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    httpManager->SendImageRequest();
+}

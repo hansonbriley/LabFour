@@ -7,6 +7,8 @@
 #include <QTimeZone>
 #include <QDateTime>
 
+#include "httpmanager.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,13 +23,16 @@ public:
     ~MainWindow();
 
 private slots:
-    void setTime();
-    void setNYCTime();
+    void SetTime();
+    void SetNYCTime();
+    void ProcessImage(QPixmap *);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
     QTimer *timerNYC;
-
+    HTTPManager *httpManager;
 };
 #endif // MAINWINDOW_H
