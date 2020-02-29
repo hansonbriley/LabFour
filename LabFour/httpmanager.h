@@ -5,6 +5,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QPixmap>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 class HTTPManager : public QObject
 {
@@ -14,15 +16,19 @@ public:
     ~HTTPManager();
 
     void sendImageRequest(QString zip);
+    void sendWeatherRequest(QString zip);
 
 signals:
     void ImageReady(QPixmap *image);
+    void WeatherJsonReady(QJsonObject *image);
 
 public slots:
     void ImageDownloadedHandler(QNetworkReply *reply);
+    void WeatherDownloadedHandler(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *imageDownloadManager;
+    QNetworkAccessManager *weatherManager;
     QByteArray downloadedData;
 
 };

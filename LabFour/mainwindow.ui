@@ -10,15 +10,31 @@
     <height>670</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1173</width>
+    <height>670</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1173</width>
+    <height>670</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(161, 218, 255);
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLCDNumber" name="hoursTime">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>110</y>
+      <x>830</x>
+      <y>60</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -36,8 +52,8 @@
    <widget class="QLCDNumber" name="minutesTime">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>110</y>
+      <x>940</x>
+      <y>60</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -55,8 +71,8 @@
    <widget class="QLCDNumber" name="secondsTime">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>110</y>
+      <x>1050</x>
+      <y>60</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -74,8 +90,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>110</y>
+      <x>920</x>
+      <y>60</y>
       <width>31</width>
       <height>81</height>
      </rect>
@@ -92,8 +108,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>110</y>
+      <x>1030</x>
+      <y>60</y>
       <width>31</width>
       <height>81</height>
      </rect>
@@ -107,27 +123,11 @@
      <string>:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>100</y>
-      <width>311</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>270</y>
+      <x>1070</x>
+      <y>150</y>
       <width>16</width>
       <height>41</height>
      </rect>
@@ -144,8 +144,8 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>270</y>
+      <x>1010</x>
+      <y>150</y>
       <width>16</width>
       <height>41</height>
      </rect>
@@ -162,8 +162,8 @@
    <widget class="QLCDNumber" name="hourNYC">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>270</y>
+      <x>960</x>
+      <y>150</y>
       <width>51</width>
       <height>51</height>
      </rect>
@@ -191,8 +191,8 @@
    <widget class="QLCDNumber" name="minuteNYC">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>270</y>
+      <x>1020</x>
+      <y>150</y>
       <width>51</width>
       <height>51</height>
      </rect>
@@ -210,8 +210,8 @@
    <widget class="QLCDNumber" name="secondNYC">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>270</y>
+      <x>1080</x>
+      <y>150</y>
       <width>51</width>
       <height>51</height>
      </rect>
@@ -226,34 +226,18 @@
      <double>33.000000000000000</double>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>270</y>
-      <width>171</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="mapLabel">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>290</y>
-      <width>261</width>
+      <x>560</x>
+      <y>280</y>
+      <width>431</width>
       <height>331</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>261</width>
+      <width>431</width>
       <height>331</height>
      </size>
     </property>
@@ -264,11 +248,14 @@
    <widget class="QPushButton" name="zipCodeUpdate">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>260</y>
+      <x>780</x>
+      <y>250</y>
       <width>75</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(195, 195, 195);</string>
     </property>
     <property name="text">
      <string>Update</string>
@@ -277,16 +264,198 @@
    <widget class="QLineEdit" name="zipCodeEdit">
     <property name="geometry">
      <rect>
-      <x>152</x>
-      <y>260</y>
+      <x>702</x>
+      <y>250</y>
       <width>71</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>98006</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>150</y>
+      <width>16</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="weatherTemp">
+    <property name="geometry">
+     <rect>
+      <x>514</x>
+      <y>40</y>
+      <width>161</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>65</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>66</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="weatherIcon">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>150</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>210</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>New York City</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableView" name="toDoList">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>321</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>291</number>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>291</number>
+    </attribute>
+   </widget>
+   <widget class="QLabel" name="welcomeMessage">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>20</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="humidityBox">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>200</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>200</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Humidity:</string>
+    </property>
+   </widget>
+   <zorder>zipCodeEdit</zorder>
+   <zorder>mapLabel</zorder>
+   <zorder>label_5</zorder>
+   <zorder>minutesTime</zorder>
+   <zorder>secondsTime</zorder>
+   <zorder>hoursTime</zorder>
+   <zorder>zipCodeUpdate</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>minuteNYC</zorder>
+   <zorder>secondNYC</zorder>
+   <zorder>hourNYC</zorder>
+   <zorder>label_7</zorder>
+   <zorder>weatherTemp</zorder>
+   <zorder>weatherIcon</zorder>
+   <zorder>label_3</zorder>
+   <zorder>toDoList</zorder>
+   <zorder>welcomeMessage</zorder>
+   <zorder>humidityBox</zorder>
+   <zorder>label_6</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
